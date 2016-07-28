@@ -14,6 +14,21 @@
 		840144B21D460F1B00A27664 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840144B01D460F1B00A27664 /* Main.storyboard */; };
 		840144B41D460F1B00A27664 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840144B31D460F1B00A27664 /* Assets.xcassets */; };
 		840144B71D460F1B00A27664 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840144B51D460F1B00A27664 /* LaunchScreen.storyboard */; };
+		840144C31D46135B00A27664 /* SparkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840144C11D46135B00A27664 /* SparkButton.swift */; };
+		840144C41D46135B00A27664 /* SparkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840144C21D46135B00A27664 /* SparkView.swift */; };
+		840144C71D46149E00A27664 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840144C61D46149E00A27664 /* CoreDataManager.swift */; };
+		840144C91D4616E800A27664 /* SparkButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840144C81D4616E800A27664 /* SparkButtonViewController.swift */; };
+		84EF60721D46484300AECEB7 /* DetailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF60711D46484300AECEB7 /* DetailProvider.swift */; };
+		84EF609D1D4754BE00AECEB7 /* SparkButton.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EF609C1D4754BE00AECEB7 /* SparkButton.storyboard */; };
+		84EF60A21D47563800AECEB7 /* TokenInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF60A11D47563800AECEB7 /* TokenInputViewController.swift */; };
+		84EF60A61D4756CC00AECEB7 /* TokenInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF60A51D4756CC00AECEB7 /* TokenInputView.swift */; };
+		84EF60A81D4765A000AECEB7 /* TokenInput.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EF60A71D4765A000AECEB7 /* TokenInput.storyboard */; };
+		84EF60AB1D476A5C00AECEB7 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF60AA1D476A5C00AECEB7 /* PaddingLabel.swift */; };
+		84EF60B01D479DDA00AECEB7 /* UIColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF60AF1D479DDA00AECEB7 /* UIColors.swift */; };
+		84EF60B21D47A3DB00AECEB7 /* TokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF60B11D47A3DB00AECEB7 /* TokenView.swift */; };
+		84EF60B41D47A52600AECEB7 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF60B31D47A52600AECEB7 /* Token.swift */; };
+		84EF60B61D48FC2B00AECEB7 /* BackspaceDetectingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF60B51D48FC2B00AECEB7 /* BackspaceDetectingTextField.swift */; };
+		84EF60B81D4A351000AECEB7 /* Licence in Resources */ = {isa = PBXBuildFile; fileRef = 84EF60B71D4A351000AECEB7 /* Licence */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +41,21 @@
 		840144B31D460F1B00A27664 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		840144B61D460F1B00A27664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		840144B81D460F1B00A27664 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		840144C11D46135B00A27664 /* SparkButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparkButton.swift; path = Details/SparkButton/SparkButton.swift; sourceTree = "<group>"; };
+		840144C21D46135B00A27664 /* SparkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparkView.swift; path = Details/SparkButton/SparkView.swift; sourceTree = "<group>"; };
+		840144C61D46149E00A27664 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = Misc/CoreDataManager.swift; sourceTree = "<group>"; };
+		840144C81D4616E800A27664 /* SparkButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparkButtonViewController.swift; path = Details/SparkButton/SparkButtonViewController.swift; sourceTree = "<group>"; };
+		84EF60711D46484300AECEB7 /* DetailProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailProvider.swift; sourceTree = "<group>"; };
+		84EF609C1D4754BE00AECEB7 /* SparkButton.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SparkButton.storyboard; path = Details/SparkButton/SparkButton.storyboard; sourceTree = "<group>"; };
+		84EF60A11D47563800AECEB7 /* TokenInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenInputViewController.swift; sourceTree = "<group>"; };
+		84EF60A51D4756CC00AECEB7 /* TokenInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenInputView.swift; sourceTree = "<group>"; };
+		84EF60A71D4765A000AECEB7 /* TokenInput.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TokenInput.storyboard; sourceTree = "<group>"; };
+		84EF60AA1D476A5C00AECEB7 /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PaddingLabel.swift; path = Libs/PaddingLabel.swift; sourceTree = "<group>"; };
+		84EF60AF1D479DDA00AECEB7 /* UIColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColors.swift; path = Extensions/UIColors.swift; sourceTree = "<group>"; };
+		84EF60B11D47A3DB00AECEB7 /* TokenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TokenView.swift; path = TokenInputView/TokenView.swift; sourceTree = "<group>"; };
+		84EF60B31D47A52600AECEB7 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		84EF60B51D48FC2B00AECEB7 /* BackspaceDetectingTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackspaceDetectingTextField.swift; path = Libs/BackspaceDetectingTextField.swift; sourceTree = "<group>"; };
+		84EF60B71D4A351000AECEB7 /* Licence */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Licence; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +72,7 @@
 		8401449B1D460F1B00A27664 = {
 			isa = PBXGroup;
 			children = (
+				84EF60B71D4A351000AECEB7 /* Licence */,
 				840144A61D460F1B00A27664 /* MattsSwiftSamples */,
 				840144A51D460F1B00A27664 /* Products */,
 			);
@@ -58,16 +89,103 @@
 		840144A61D460F1B00A27664 /* MattsSwiftSamples */ = {
 			isa = PBXGroup;
 			children = (
-				840144A71D460F1B00A27664 /* AppDelegate.swift */,
-				840144AC1D460F1B00A27664 /* MasterViewController.swift */,
+				84EF60AC1D479DB600AECEB7 /* Extensions */,
+				84EF60A91D476A2D00AECEB7 /* Libs */,
+				84EF606E1D46460700AECEB7 /* Controller */,
+				840144C51D46148000A27664 /* Misc */,
+				840144C01D46117100A27664 /* Master */,
+				840144BF1D46116000A27664 /* Details */,
+			);
+			path = MattsSwiftSamples;
+			sourceTree = "<group>";
+		};
+		840144BE1D46115500A27664 /* SparkButtons */ = {
+			isa = PBXGroup;
+			children = (
+				840144C81D4616E800A27664 /* SparkButtonViewController.swift */,
+				840144C11D46135B00A27664 /* SparkButton.swift */,
+				840144C21D46135B00A27664 /* SparkView.swift */,
+				84EF609C1D4754BE00AECEB7 /* SparkButton.storyboard */,
+			);
+			name = SparkButtons;
+			sourceTree = "<group>";
+		};
+		840144BF1D46116000A27664 /* Details */ = {
+			isa = PBXGroup;
+			children = (
 				840144AE1D460F1B00A27664 /* DetailViewController.swift */,
+				84EF60A01D47563800AECEB7 /* TokenInput */,
+				840144BE1D46115500A27664 /* SparkButtons */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
+		840144C01D46117100A27664 /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				84EF60711D46484300AECEB7 /* DetailProvider.swift */,
+				840144AC1D460F1B00A27664 /* MasterViewController.swift */,
 				840144B01D460F1B00A27664 /* Main.storyboard */,
 				840144B31D460F1B00A27664 /* Assets.xcassets */,
 				840144B51D460F1B00A27664 /* LaunchScreen.storyboard */,
-				840144B81D460F1B00A27664 /* Info.plist */,
 				840144A91D460F1B00A27664 /* MattsSwiftSamples.xcdatamodeld */,
+				840144A71D460F1B00A27664 /* AppDelegate.swift */,
+				840144B81D460F1B00A27664 /* Info.plist */,
 			);
-			path = MattsSwiftSamples;
+			name = Master;
+			sourceTree = "<group>";
+		};
+		840144C51D46148000A27664 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				840144C61D46149E00A27664 /* CoreDataManager.swift */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		84EF606E1D46460700AECEB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		84EF60A01D47563800AECEB7 /* TokenInput */ = {
+			isa = PBXGroup;
+			children = (
+				84EF60A31D47563D00AECEB7 /* TokenInputView */,
+				84EF60A11D47563800AECEB7 /* TokenInputViewController.swift */,
+				84EF60A71D4765A000AECEB7 /* TokenInput.storyboard */,
+				84EF60B31D47A52600AECEB7 /* Token.swift */,
+			);
+			name = TokenInput;
+			path = Details/TokenInput;
+			sourceTree = "<group>";
+		};
+		84EF60A31D47563D00AECEB7 /* TokenInputView */ = {
+			isa = PBXGroup;
+			children = (
+				84EF60A51D4756CC00AECEB7 /* TokenInputView.swift */,
+				84EF60B11D47A3DB00AECEB7 /* TokenView.swift */,
+			);
+			name = TokenInputView;
+			sourceTree = "<group>";
+		};
+		84EF60A91D476A2D00AECEB7 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				84EF60AA1D476A5C00AECEB7 /* PaddingLabel.swift */,
+				84EF60B51D48FC2B00AECEB7 /* BackspaceDetectingTextField.swift */,
+			);
+			name = Libs;
+			sourceTree = "<group>";
+		};
+		84EF60AC1D479DB600AECEB7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				84EF60AF1D479DDA00AECEB7 /* UIColors.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,8 +246,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84EF60A81D4765A000AECEB7 /* TokenInput.storyboard in Resources */,
 				840144B71D460F1B00A27664 /* LaunchScreen.storyboard in Resources */,
+				84EF60B81D4A351000AECEB7 /* Licence in Resources */,
 				840144B41D460F1B00A27664 /* Assets.xcassets in Resources */,
+				84EF609D1D4754BE00AECEB7 /* SparkButton.storyboard in Resources */,
 				840144B21D460F1B00A27664 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,9 +262,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84EF60AB1D476A5C00AECEB7 /* PaddingLabel.swift in Sources */,
+				84EF60721D46484300AECEB7 /* DetailProvider.swift in Sources */,
 				840144A81D460F1B00A27664 /* AppDelegate.swift in Sources */,
+				84EF60B01D479DDA00AECEB7 /* UIColors.swift in Sources */,
 				840144AB1D460F1B00A27664 /* MattsSwiftSamples.xcdatamodeld in Sources */,
+				840144C41D46135B00A27664 /* SparkView.swift in Sources */,
+				84EF60B41D47A52600AECEB7 /* Token.swift in Sources */,
 				840144AD1D460F1B00A27664 /* MasterViewController.swift in Sources */,
+				84EF60A61D4756CC00AECEB7 /* TokenInputView.swift in Sources */,
+				840144C31D46135B00A27664 /* SparkButton.swift in Sources */,
+				840144C71D46149E00A27664 /* CoreDataManager.swift in Sources */,
+				84EF60B61D48FC2B00AECEB7 /* BackspaceDetectingTextField.swift in Sources */,
+				84EF60B21D47A3DB00AECEB7 /* TokenView.swift in Sources */,
+				84EF60A21D47563800AECEB7 /* TokenInputViewController.swift in Sources */,
+				840144C91D4616E800A27664 /* SparkButtonViewController.swift in Sources */,
 				840144AF1D460F1B00A27664 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +396,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Kyro.MattsSwiftSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -274,6 +408,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Kyro.MattsSwiftSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -296,6 +431,7 @@
 				840144BD1D460F1B00A27664 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

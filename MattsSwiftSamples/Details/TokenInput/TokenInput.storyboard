@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ixt-zb-qQS">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Token Input View Controller-->
+        <scene sceneID="j2g-il-0WO">
+            <objects>
+                <viewController storyboardIdentifier="TokenInput" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ixt-zb-qQS" customClass="TokenInputViewController" customModule="MattsSwiftSamples" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CoT-df-pqT"/>
+                        <viewControllerLayoutGuide type="bottom" id="rkc-7g-ZEi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ilm-RX-Tyz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lvu-LF-3l4" customClass="TokenInputView" customModule="MattsSwiftSamples" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="yQa-Cf-f1w"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TXs-mF-3q0">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ixt-zb-qQS" id="NSY-Pb-VKK"/>
+                                    <outlet property="delegate" destination="Ixt-zb-qQS" id="7hb-if-5nI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="lvu-LF-3l4" secondAttribute="trailing" id="Hpm-e3-m1q"/>
+                            <constraint firstItem="TXs-mF-3q0" firstAttribute="leading" secondItem="Ilm-RX-Tyz" secondAttribute="leading" id="J7d-X1-Yly"/>
+                            <constraint firstAttribute="trailing" secondItem="TXs-mF-3q0" secondAttribute="trailing" id="Nnr-X2-mb5"/>
+                            <constraint firstItem="lvu-LF-3l4" firstAttribute="leading" secondItem="Ilm-RX-Tyz" secondAttribute="leading" id="OEm-AC-KkW"/>
+                            <constraint firstItem="TXs-mF-3q0" firstAttribute="top" secondItem="lvu-LF-3l4" secondAttribute="bottom" id="iIn-vl-3b1"/>
+                            <constraint firstItem="lvu-LF-3l4" firstAttribute="top" secondItem="CoT-df-pqT" secondAttribute="bottom" id="jn6-QJ-U54"/>
+                            <constraint firstItem="rkc-7g-ZEi" firstAttribute="top" secondItem="TXs-mF-3q0" secondAttribute="bottom" id="zit-7f-ucN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="TXs-mF-3q0" id="ued-Cg-qH2"/>
+                        <outlet property="tokenView" destination="lvu-LF-3l4" id="VV8-i8-KwD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aTb-QR-YT5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="482" y="448"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="t8z-A5-pU9">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Spark Button View Controller-->
+        <scene sceneID="fpJ-wF-dAS">
+            <objects>
+                <viewController storyboardIdentifier="SparkButton" useStoryboardIdentifierAsRestorationIdentifier="YES" id="t8z-A5-pU9" customClass="SparkButtonViewController" customModule="MattsSwiftSamples" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JgH-rI-ZNO"/>
+                        <viewControllerLayoutGuide type="bottom" id="fkE-6V-urv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="B5X-Jt-k2P">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7g-9t-Yzz" customClass="SparkButton" customModule="MattsSwiftSamples" customModuleProvider="target">
+                                <rect key="frame" x="292" y="289" width="16" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="16" id="7cm-Yc-2Si"/>
+                                    <constraint firstAttribute="height" constant="22" id="acq-ji-5YI"/>
+                                </constraints>
+                                <state key="normal" image="like"/>
+                                <connections>
+                                    <action selector="likeButtonTapped:" destination="t8z-A5-pU9" eventType="touchUpInside" id="4cs-pf-Qtc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="C7g-9t-Yzz" firstAttribute="centerY" secondItem="B5X-Jt-k2P" secondAttribute="centerY" id="G9n-GD-Qmk"/>
+                            <constraint firstItem="C7g-9t-Yzz" firstAttribute="centerX" secondItem="B5X-Jt-k2P" secondAttribute="centerX" id="d0j-rz-UX6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="likeButton" destination="C7g-9t-Yzz" id="qax-lX-2Jq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XhU-tF-tyf" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="327" y="267"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="like" width="16" height="16"/>
+    </resources>
+</document>
