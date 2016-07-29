@@ -10,6 +10,7 @@ import Foundation
 
 class Token:Hashable,Equatable {
     var string:String
+    var context:AnyObject?
     
     init(string:String) {
         self.string = string
@@ -21,7 +22,7 @@ class Token:Hashable,Equatable {
 }
 
 func == (lhs:Token, rhs:Token) -> Bool {
-    return lhs.string == rhs.string
+    return lhs.string == rhs.string && lhs.context === rhs.context
 }
 
 

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol BackspaceDetectingTextFieldDelegate:UITextFieldDelegate {
-    func textFieldDidDeleteBackwards(textField:UITextField)
+    func textFieldDidDeleteBackwards(_ textField:UITextField)
 }
 
 class BackspaceDetectingTextField:UITextField {

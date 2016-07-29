@@ -12,17 +12,17 @@ class PaddingLabel : UILabel {
     
     var textInsets: UIEdgeInsets = UIEdgeInsetsZero
     
-    override func textRectForBounds(bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
+    override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
         if text == nil {
-            return super.textRectForBounds(bounds, limitedToNumberOfLines: numberOfLines)
+            return super.textRect(forBounds: bounds, limitedToNumberOfLines: numberOfLines)
         }
         var rect = textInsets.apply(bounds)
-        rect = super.textRectForBounds(rect, limitedToNumberOfLines: numberOfLines)
+        rect = super.textRect(forBounds: rect, limitedToNumberOfLines: numberOfLines)
         return textInsets.inverse.apply(rect)
     }
     
-    override func drawTextInRect(rect: CGRect) {
-        super.drawTextInRect(textInsets.apply(rect))
+    override func drawText(in rect: CGRect) {
+        super.drawText(in: textInsets.apply(rect))
     }
     
 }
@@ -32,7 +32,7 @@ extension UIEdgeInsets {
         return UIEdgeInsets(top: -top, left: -left, bottom: -bottom, right: -right)
     }
     
-    func apply(rect: CGRect) -> CGRect {
+    func apply(_ rect: CGRect) -> CGRect {
         return UIEdgeInsetsInsetRect(rect, self)
     }
 }

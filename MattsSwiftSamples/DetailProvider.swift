@@ -17,7 +17,7 @@ class DetailProvider {
     
     private static var viewControllers = [Int:DetailViewController]()
 
-    class func viewControllerForIndex(index:Int) -> DetailViewController? {
+    class func viewControllerForIndex(_ index:Int) -> DetailViewController? {
         guard index >= 0 && index < storyboards.count else { return nil }
         
         if let viewController = viewControllers[index] {
@@ -31,11 +31,11 @@ class DetailProvider {
         return detailVC
     }
     
-    class func hasDetailForIndex(index:Int) -> Bool {
+    class func hasDetailForIndex(_ index:Int) -> Bool {
         return index < storyboards.count
     }
     
-    class func titleForIndex(index:Int) -> String? {
+    class func titleForIndex(_ index:Int) -> String? {
         guard index >= 0 && index < storyboards.count else { return nil }
 
         return storyboards[index].label
