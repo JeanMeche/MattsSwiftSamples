@@ -9,6 +9,11 @@
 
 import UIKit
 
+private let padding = UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 16)
+private let rowHeight:CGFloat = 25
+private let vSpace:CGFloat = 4
+private let hSpace:CGFloat = 0
+private let fieldMarginX:CGFloat = 8
 
 protocol TokenInputViewDelegate {
     func tokenInputView(view:TokenInputView, didChangeText text:String?)
@@ -17,6 +22,15 @@ protocol TokenInputViewDelegate {
     
     func tokenInputViewDidEndEditing(view:TokenInputView)
     func tokenInputViewDidBegingEditing(view:TokenInputView)
+    
+    // Optional methods
+    func tokenInputViewShouldReturn(view:TokenInputView)
+    func tokenInputView(view:TokenInputView, didChangeHeightTo height:CGFloat)
+}
+
+extension TokenInputViewDelegate {
+    func tokenInputView(view:TokenInputView, didChangeHeightTo height:CGFloat) {}
+    func tokenInputViewShouldReturn(view:TokenInputView) {}
 }
 
 class TokenInputView:UIView, TokenViewDelegate {
@@ -27,15 +41,32 @@ class TokenInputView:UIView, TokenViewDelegate {
     private var textField:BackspaceDetectingTextField!
     private var fieldNameLabel:UILabel!
     
+    private var intrinsicContentHeight:CGFloat = rowHeight {
+        didSet {
+            if intrinsicContentHeight != oldValue {
+                delegate?.tokenInputView(self, didChangeHeightTo: intrinsicContentHeight)
+            }
+        }
+    }
+    private var bottomBorderLayer = CALayer()
+    
     var fieldName:String? {
         didSet {
             setFieldName()
         }
     }
+    
     var delegate:TokenInputViewDelegate?
     var placeholder:String? {
         didSet {
             updatePlaceholderTextVisibility()
+        }
+    }
+    
+    var showBottomBorder:Bool=true {
+        didSet {
+            bottomBorderLayer.hidden = true
+            setNeedsDisplay()
         }
     }
     
@@ -60,7 +91,16 @@ class TokenInputView:UIView, TokenViewDelegate {
         addSubview(textField)
 
         fieldNameLabel = UILabel(frame:CGRect.zero)
+        
+        bottomBorderLayer.backgroundColor = UIColor.lightGrayColor().CGColor
+        bottomBorderLayer.hidden = showBottomBorder
+        layer.addSublayer(bottomBorderLayer)
+
         addSubview(fieldNameLabel)
+    }
+    
+    override func intrinsicContentSize() -> CGSize {
+        return CGSize(width:UIViewNoIntrinsicMetric, height:max(45, self.intrinsicContentHeight))
     }
     
     private func setFieldName() {
@@ -79,6 +119,7 @@ class TokenInputView:UIView, TokenViewDelegate {
         addSubview(newTokenView)
         
         textField.text = nil
+        delegate?.tokenInputView(self, didChangeText: nil)
         updatePlaceholderTextVisibility()
         repositionViews()
     }
@@ -97,14 +138,9 @@ class TokenInputView:UIView, TokenViewDelegate {
     }
     
     func repositionViews() {
-        let padding = UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 16)
         var curX:CGFloat = padding.left
         var curY:CGFloat = padding.top
-        let rowHeight:CGFloat = 25
-        let vSpace:CGFloat = 4
-        let hSpace:CGFloat = 0
         var totalHeight:CGFloat = 0
-        let fieldMarginX:CGFloat = 8
         
         fieldNameLabel.frame = CGRect(x:curX + 8, y:curY+(rowHeight-fieldNameLabel.frame.height)/2, width:fieldNameLabel.frame.width, height:rowHeight)
         curX = max(fieldMarginX, fieldNameLabel.frame.maxX)
@@ -135,6 +171,10 @@ class TokenInputView:UIView, TokenViewDelegate {
         
         let textFieldRect = CGRect(x: curX, y: curY, width: availabledWidthForTextfield, height: rowHeight)
         textField.frame = textFieldRect
+        
+        intrinsicContentHeight = max(totalHeight, textFieldRect.maxY+padding.bottom)
+        invalidateIntrinsicContentSize()
+        setNeedsDisplay()
     }
     
     func updatePlaceholderTextVisibility() {
@@ -144,6 +184,7 @@ class TokenInputView:UIView, TokenViewDelegate {
     override func layoutSubviews() {
         super.layoutSubviews()
         repositionViews()
+        bottomBorderLayer.frame = CGRect(x: 0, y: bounds.maxY-0.5, width: bounds.width, height: 0.5)
     }
     
     // MARK: TokenView Delegate
@@ -179,6 +220,14 @@ class TokenInputView:UIView, TokenViewDelegate {
     
     func onTextFieldDidChange(sender:UITextField) {
         delegate?.tokenInputView(self, didChangeText: sender.text)
+    }
+    
+    var text:String? {
+        return textField.text
+    }
+    
+    var isEditing:Bool {
+        return textField.editing
     }
 }
 

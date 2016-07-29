@@ -64,7 +64,6 @@ class TokenView:PaddingLabel {
     }
     
     func setSelected(selected:Bool, animated:Bool = false) {
-//        if self.selected == selected && animated { return }
         self.selected = selected
         
         if selected && !isFirstResponder() {

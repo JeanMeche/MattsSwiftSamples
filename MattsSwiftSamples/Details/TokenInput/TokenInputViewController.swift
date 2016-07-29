@@ -55,11 +55,11 @@ class TokenInputViewController:DetailViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lightGrayColor()
         tokenView.placeholder = "Entre a name"
         tokenView.fieldName = "To: "
         tokenView.delegate = self
         
+        tableView.hidden = true
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 }
