@@ -12,22 +12,23 @@ class DetailProvider {
     
     static var storyboards = [
         (name:"SparkButton", label:"Spark Button"),
-        (name:"TokenInput", label:"Token Input")
+        (name:"TokenInput", label:"Token Input"),
+        (name:"FlappyBird", label:"Flappy Bird")
     ]
-    
-    private static var viewControllers = [Int:DetailViewController]()
 
     class func viewControllerForIndex(index:Int) -> DetailViewController? {
         guard index >= 0 && index < storyboards.count else { return nil }
         
-        if let viewController = viewControllers[index] {
-            return viewController
-        }
-        
         let storyboard = UIStoryboard(name: storyboards[index].name, bundle: nil)
-        let detailVC = storyboard.instantiateInitialViewController() as? DetailViewController
+        let initialVC = storyboard.instantiateInitialViewController()
+        if initialVC == nil {
+            fatalError("No initial ViewController for Storyboard \(storyboards[index].name)")
+        }
+        let detailVC = initialVC as? DetailViewController
+        if detailVC == nil {
+            fatalError("View Controller is not of class DetailViewController")
+        }
         detailVC?.sampleIndex = index
-        viewControllers[index] = detailVC
         return detailVC
     }
     
@@ -39,9 +40,5 @@ class DetailProvider {
         guard index >= 0 && index < storyboards.count else { return nil }
 
         return storyboards[index].label
-    }
-    
-    class func clearViewControllersCache() {
-        viewControllers.removeAll()
     }
 }

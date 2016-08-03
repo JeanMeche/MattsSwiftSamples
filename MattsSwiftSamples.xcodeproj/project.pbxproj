@@ -18,6 +18,14 @@
 		840144C41D46135B00A27664 /* SparkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840144C21D46135B00A27664 /* SparkView.swift */; };
 		840144C71D46149E00A27664 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840144C61D46149E00A27664 /* CoreDataManager.swift */; };
 		840144C91D4616E800A27664 /* SparkButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840144C81D4616E800A27664 /* SparkButtonViewController.swift */; };
+		844712E81D50C96A00FE8615 /* FlappyBird.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844712E71D50C96A00FE8615 /* FlappyBird.storyboard */; };
+		844712EA1D50C9C700FE8615 /* FlappyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844712E91D50C9C700FE8615 /* FlappyViewController.swift */; };
+		844712EC1D50C9E800FE8615 /* FlappyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844712EB1D50C9E800FE8615 /* FlappyScene.swift */; };
+		844712EE1D50CC4600FE8615 /* flappy.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 844712ED1D50CC4600FE8615 /* flappy.atlas */; };
+		844712F21D50D8D100FE8615 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844712F11D50D8D100FE8615 /* Comparable.swift */; };
+		844BB7A61D50F6FF000E84B8 /* flap.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 844BB7A21D50F553000E84B8 /* flap.m4a */; };
+		844BB7A71D50F6FF000E84B8 /* hit.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 844BB7A31D50F553000E84B8 /* hit.m4a */; };
+		844BB7A91D521FB9000E84B8 /* score.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 844BB7A81D521A3A000E84B8 /* score.m4a */; };
 		84EF60721D46484300AECEB7 /* DetailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF60711D46484300AECEB7 /* DetailProvider.swift */; };
 		84EF609D1D4754BE00AECEB7 /* SparkButton.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EF609C1D4754BE00AECEB7 /* SparkButton.storyboard */; };
 		84EF60A21D47563800AECEB7 /* TokenInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF60A11D47563800AECEB7 /* TokenInputViewController.swift */; };
@@ -45,6 +53,14 @@
 		840144C21D46135B00A27664 /* SparkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparkView.swift; path = Details/SparkButton/SparkView.swift; sourceTree = "<group>"; };
 		840144C61D46149E00A27664 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = Misc/CoreDataManager.swift; sourceTree = "<group>"; };
 		840144C81D4616E800A27664 /* SparkButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparkButtonViewController.swift; path = Details/SparkButton/SparkButtonViewController.swift; sourceTree = "<group>"; };
+		844712E71D50C96A00FE8615 /* FlappyBird.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = FlappyBird.storyboard; path = Details/FlappyBird/FlappyBird.storyboard; sourceTree = "<group>"; };
+		844712E91D50C9C700FE8615 /* FlappyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlappyViewController.swift; path = Details/FlappyBird/FlappyViewController.swift; sourceTree = "<group>"; };
+		844712EB1D50C9E800FE8615 /* FlappyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlappyScene.swift; path = Details/FlappyBird/FlappyScene.swift; sourceTree = "<group>"; };
+		844712ED1D50CC4600FE8615 /* flappy.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = flappy.atlas; path = Details/FlappyBird/flappy.atlas; sourceTree = "<group>"; };
+		844712F11D50D8D100FE8615 /* Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comparable.swift; path = Extensions/Comparable.swift; sourceTree = "<group>"; };
+		844BB7A21D50F553000E84B8 /* flap.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = flap.m4a; sourceTree = "<group>"; };
+		844BB7A31D50F553000E84B8 /* hit.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = hit.m4a; sourceTree = "<group>"; };
+		844BB7A81D521A3A000E84B8 /* score.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = score.m4a; sourceTree = "<group>"; };
 		84EF60711D46484300AECEB7 /* DetailProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailProvider.swift; sourceTree = "<group>"; };
 		84EF609C1D4754BE00AECEB7 /* SparkButton.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SparkButton.storyboard; path = Details/SparkButton/SparkButton.storyboard; sourceTree = "<group>"; };
 		84EF60A11D47563800AECEB7 /* TokenInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenInputViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +131,7 @@
 			children = (
 				840144AE1D460F1B00A27664 /* DetailViewController.swift */,
 				84EF60A01D47563800AECEB7 /* TokenInput */,
+				844712E61D50C5F400FE8615 /* FlappyBird */,
 				840144BE1D46115500A27664 /* SparkButtons */,
 			);
 			name = Details;
@@ -141,6 +158,29 @@
 				840144C61D46149E00A27664 /* CoreDataManager.swift */,
 			);
 			name = Misc;
+			sourceTree = "<group>";
+		};
+		844712E61D50C5F400FE8615 /* FlappyBird */ = {
+			isa = PBXGroup;
+			children = (
+				844BB79D1D50F320000E84B8 /* Sounds */,
+				844712ED1D50CC4600FE8615 /* flappy.atlas */,
+				844712E71D50C96A00FE8615 /* FlappyBird.storyboard */,
+				844712E91D50C9C700FE8615 /* FlappyViewController.swift */,
+				844712EB1D50C9E800FE8615 /* FlappyScene.swift */,
+			);
+			name = FlappyBird;
+			sourceTree = "<group>";
+		};
+		844BB79D1D50F320000E84B8 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				844BB7A81D521A3A000E84B8 /* score.m4a */,
+				844BB7A21D50F553000E84B8 /* flap.m4a */,
+				844BB7A31D50F553000E84B8 /* hit.m4a */,
+			);
+			name = Sounds;
+			path = Details/FlappyBird/Sounds;
 			sourceTree = "<group>";
 		};
 		84EF606E1D46460700AECEB7 /* Controller */ = {
@@ -184,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				84EF60AF1D479DDA00AECEB7 /* UIColors.swift */,
+				844712F11D50D8D100FE8615 /* Comparable.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -220,6 +261,8 @@
 				TargetAttributes = {
 					840144A31D460F1B00A27664 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = UR5B93K838;
+						DevelopmentTeamName = "Matthieu Riegler";
 					};
 				};
 			};
@@ -246,10 +289,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844BB7A91D521FB9000E84B8 /* score.m4a in Resources */,
+				844BB7A61D50F6FF000E84B8 /* flap.m4a in Resources */,
+				844BB7A71D50F6FF000E84B8 /* hit.m4a in Resources */,
 				84EF60A81D4765A000AECEB7 /* TokenInput.storyboard in Resources */,
 				840144B71D460F1B00A27664 /* LaunchScreen.storyboard in Resources */,
 				84EF60B81D4A351000AECEB7 /* Licence in Resources */,
+				844712E81D50C96A00FE8615 /* FlappyBird.storyboard in Resources */,
 				840144B41D460F1B00A27664 /* Assets.xcassets in Resources */,
+				844712EE1D50CC4600FE8615 /* flappy.atlas in Resources */,
 				84EF609D1D4754BE00AECEB7 /* SparkButton.storyboard in Resources */,
 				840144B21D460F1B00A27664 /* Main.storyboard in Resources */,
 			);
@@ -267,11 +315,14 @@
 				840144A81D460F1B00A27664 /* AppDelegate.swift in Sources */,
 				84EF60B01D479DDA00AECEB7 /* UIColors.swift in Sources */,
 				840144AB1D460F1B00A27664 /* MattsSwiftSamples.xcdatamodeld in Sources */,
+				844712EA1D50C9C700FE8615 /* FlappyViewController.swift in Sources */,
 				840144C41D46135B00A27664 /* SparkView.swift in Sources */,
+				844712EC1D50C9E800FE8615 /* FlappyScene.swift in Sources */,
 				84EF60B41D47A52600AECEB7 /* Token.swift in Sources */,
 				840144AD1D460F1B00A27664 /* MasterViewController.swift in Sources */,
 				84EF60A61D4756CC00AECEB7 /* TokenInputView.swift in Sources */,
 				840144C31D46135B00A27664 /* SparkButton.swift in Sources */,
+				844712F21D50D8D100FE8615 /* Comparable.swift in Sources */,
 				840144C71D46149E00A27664 /* CoreDataManager.swift in Sources */,
 				84EF60B61D48FC2B00AECEB7 /* BackspaceDetectingTextField.swift in Sources */,
 				84EF60B21D47A3DB00AECEB7 /* TokenView.swift in Sources */,

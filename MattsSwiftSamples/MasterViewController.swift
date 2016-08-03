@@ -28,7 +28,6 @@ class MasterViewController: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        DetailProvider.clearViewControllersCache()
     }
 
     // MARK: - Segues
