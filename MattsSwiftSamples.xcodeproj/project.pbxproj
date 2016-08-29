@@ -26,6 +26,8 @@
 		844BB7A61D50F6FF000E84B8 /* flap.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 844BB7A21D50F553000E84B8 /* flap.m4a */; };
 		844BB7A71D50F6FF000E84B8 /* hit.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 844BB7A31D50F553000E84B8 /* hit.m4a */; };
 		844BB7A91D521FB9000E84B8 /* score.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 844BB7A81D521A3A000E84B8 /* score.m4a */; };
+		844BB7AE1D522E2C000E84B8 /* UberSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BB7AD1D522E2C000E84B8 /* UberSplash.storyboard */; };
+		844BB7B01D522E50000E84B8 /* UberSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BB7AF1D522E50000E84B8 /* UberSplashViewController.swift */; };
 		84EF60721D46484300AECEB7 /* DetailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF60711D46484300AECEB7 /* DetailProvider.swift */; };
 		84EF609D1D4754BE00AECEB7 /* SparkButton.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EF609C1D4754BE00AECEB7 /* SparkButton.storyboard */; };
 		84EF60A21D47563800AECEB7 /* TokenInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF60A11D47563800AECEB7 /* TokenInputViewController.swift */; };
@@ -61,6 +63,8 @@
 		844BB7A21D50F553000E84B8 /* flap.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = flap.m4a; sourceTree = "<group>"; };
 		844BB7A31D50F553000E84B8 /* hit.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = hit.m4a; sourceTree = "<group>"; };
 		844BB7A81D521A3A000E84B8 /* score.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = score.m4a; sourceTree = "<group>"; };
+		844BB7AD1D522E2C000E84B8 /* UberSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = UberSplash.storyboard; path = Details/UberSplash/UberSplash.storyboard; sourceTree = "<group>"; };
+		844BB7AF1D522E50000E84B8 /* UberSplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UberSplashViewController.swift; path = Details/UberSplash/UberSplashViewController.swift; sourceTree = "<group>"; };
 		84EF60711D46484300AECEB7 /* DetailProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailProvider.swift; sourceTree = "<group>"; };
 		84EF609C1D4754BE00AECEB7 /* SparkButton.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SparkButton.storyboard; path = Details/SparkButton/SparkButton.storyboard; sourceTree = "<group>"; };
 		84EF60A11D47563800AECEB7 /* TokenInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenInputViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 				84EF60A01D47563800AECEB7 /* TokenInput */,
 				844712E61D50C5F400FE8615 /* FlappyBird */,
 				840144BE1D46115500A27664 /* SparkButtons */,
+				844BB7AC1D522DD4000E84B8 /* UberSplash */,
 			);
 			name = Details;
 			sourceTree = "<group>";
@@ -181,6 +186,15 @@
 			);
 			name = Sounds;
 			path = Details/FlappyBird/Sounds;
+			sourceTree = "<group>";
+		};
+		844BB7AC1D522DD4000E84B8 /* UberSplash */ = {
+			isa = PBXGroup;
+			children = (
+				844BB7AD1D522E2C000E84B8 /* UberSplash.storyboard */,
+				844BB7AF1D522E50000E84B8 /* UberSplashViewController.swift */,
+			);
+			name = UberSplash;
 			sourceTree = "<group>";
 		};
 		84EF606E1D46460700AECEB7 /* Controller */ = {
@@ -298,6 +312,7 @@
 				844712E81D50C96A00FE8615 /* FlappyBird.storyboard in Resources */,
 				840144B41D460F1B00A27664 /* Assets.xcassets in Resources */,
 				844712EE1D50CC4600FE8615 /* flappy.atlas in Resources */,
+				844BB7AE1D522E2C000E84B8 /* UberSplash.storyboard in Resources */,
 				84EF609D1D4754BE00AECEB7 /* SparkButton.storyboard in Resources */,
 				840144B21D460F1B00A27664 /* Main.storyboard in Resources */,
 			);
@@ -323,6 +338,7 @@
 				84EF60A61D4756CC00AECEB7 /* TokenInputView.swift in Sources */,
 				840144C31D46135B00A27664 /* SparkButton.swift in Sources */,
 				844712F21D50D8D100FE8615 /* Comparable.swift in Sources */,
+				844BB7B01D522E50000E84B8 /* UberSplashViewController.swift in Sources */,
 				840144C71D46149E00A27664 /* CoreDataManager.swift in Sources */,
 				84EF60B61D48FC2B00AECEB7 /* BackspaceDetectingTextField.swift in Sources */,
 				84EF60B21D47A3DB00AECEB7 /* TokenView.swift in Sources */,
