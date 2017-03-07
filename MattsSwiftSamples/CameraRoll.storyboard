@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="i8T-bw-FJJ">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Camera Roll View Controller-->
+        <scene sceneID="2bT-Ts-vQC">
+            <objects>
+                <viewController id="i8T-bw-FJJ" customClass="CameraRollViewController" customModule="MattsSwiftSamples" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0BQ-JI-Quq"/>
+                        <viewControllerLayoutGuide type="bottom" id="VXI-r9-HHh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gI1-3o-ddv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F8t-FS-9Tm">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="Dr0-D2-ird">
+                                    <size key="itemSize" width="60" height="60"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cellIdentifier" id="xz3-oS-dlk" customClass="CameraRollCell" customModule="MattsSwiftSamples" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hJO-sf-djD"/>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="hJO-sf-djD" secondAttribute="trailing" id="Ntu-QK-v7r"/>
+                                            <constraint firstItem="hJO-sf-djD" firstAttribute="leading" secondItem="xz3-oS-dlk" secondAttribute="leading" id="eeE-eJ-4ZH"/>
+                                            <constraint firstAttribute="bottom" secondItem="hJO-sf-djD" secondAttribute="bottom" id="fzp-9N-4Wj"/>
+                                            <constraint firstItem="hJO-sf-djD" firstAttribute="top" secondItem="xz3-oS-dlk" secondAttribute="top" id="ijp-4e-Oup"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="hJO-sf-djD" id="AmM-VJ-63v"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="i8T-bw-FJJ" id="hQa-Ah-o4z"/>
+                                    <outlet property="delegate" destination="i8T-bw-FJJ" id="jkz-AS-R9C"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="F8t-FS-9Tm" firstAttribute="leading" secondItem="gI1-3o-ddv" secondAttribute="leading" id="80A-09-fw5"/>
+                            <constraint firstItem="F8t-FS-9Tm" firstAttribute="top" secondItem="gI1-3o-ddv" secondAttribute="top" id="M9X-CN-033"/>
+                            <constraint firstAttribute="trailing" secondItem="F8t-FS-9Tm" secondAttribute="trailing" id="iwQ-8Q-so8"/>
+                            <constraint firstItem="VXI-r9-HHh" firstAttribute="top" secondItem="F8t-FS-9Tm" secondAttribute="bottom" id="uvn-XG-KGH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="F8t-FS-9Tm" id="Qzt-Ft-Gc4"/>
+                        <segue destination="LGu-fp-OyZ" kind="show" identifier="detail" id="6GS-9g-9er"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9oI-Ss-VDe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-66.400000000000006" y="-57.121439280359823"/>
+        </scene>
+        <!--Camera Roll Detail View Controller-->
+        <scene sceneID="ILg-hC-EoQ">
+            <objects>
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="LGu-fp-OyZ" customClass="CameraRollDetailViewController" customModule="MattsSwiftSamples" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jGP-Wd-clI"/>
+                        <viewControllerLayoutGuide type="bottom" id="gYB-wX-Tkh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7BT-fj-kDg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r94-Kk-iMB">
+                                <subviews>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bird1.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZT0-bc-GmN">
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="W2x-q5-zr2" appends="YES" id="VF2-zR-0XE"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ZT0-bc-GmN" secondAttribute="bottom" id="7u5-IU-Te0"/>
+                                    <constraint firstItem="ZT0-bc-GmN" firstAttribute="top" secondItem="r94-Kk-iMB" secondAttribute="top" id="HpJ-Uc-N1B"/>
+                                    <constraint firstItem="ZT0-bc-GmN" firstAttribute="centerX" secondItem="r94-Kk-iMB" secondAttribute="centerX" id="U84-wN-P74"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZT0-bc-GmN" secondAttribute="trailing" id="Xag-z2-deZ"/>
+                                    <constraint firstItem="ZT0-bc-GmN" firstAttribute="centerY" secondItem="r94-Kk-iMB" secondAttribute="centerY" id="d4j-aV-8hq"/>
+                                    <constraint firstItem="ZT0-bc-GmN" firstAttribute="leading" secondItem="r94-Kk-iMB" secondAttribute="leading" id="qwj-RZ-Znx"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="LGu-fp-OyZ" id="Y6S-N0-pAC"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="gYB-wX-Tkh" firstAttribute="top" secondItem="r94-Kk-iMB" secondAttribute="bottom" id="Uvr-9V-TIv"/>
+                            <constraint firstItem="r94-Kk-iMB" firstAttribute="top" secondItem="jGP-Wd-clI" secondAttribute="bottom" id="Z5z-Jl-Zdf"/>
+                            <constraint firstAttribute="trailing" secondItem="r94-Kk-iMB" secondAttribute="trailing" id="m4r-eU-Nka"/>
+                            <constraint firstItem="r94-Kk-iMB" firstAttribute="leading" secondItem="7BT-fj-kDg" secondAttribute="leading" id="wEL-pC-lOV"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="ZT0-bc-GmN" id="MYh-wP-WHV"/>
+                        <outlet property="scrollView" destination="r94-Kk-iMB" id="YqU-Sv-IuO"/>
+                        <outlet property="tapGestureRecognizer" destination="W2x-q5-zr2" id="uUH-2L-goe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GHZ-pm-aQG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="W2x-q5-zr2">
+                    <connections>
+                        <action selector="didTapWithSender:" destination="LGu-fp-OyZ" id="yWu-gy-9zZ"/>
+                        <outlet property="delegate" destination="LGu-fp-OyZ" id="A7o-jx-Mja"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="677.60000000000002" y="-57.121439280359823"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Bird1.png" width="17" height="12"/>
+    </resources>
+</document>

@@ -26,7 +26,7 @@ class TokenInputViewController:DetailViewController {
     @IBOutlet weak var tokenView:TokenInputView!
     @IBOutlet weak var tableView:UITableView!
     
-    private let names:[(String,String,Sport)] = [
+    fileprivate let names:[(String,String,Sport)] = [
         ("André", "Agassi", .Tennis),
         ("Pete", "Sampras", .Tennis),
         ("Boris", "Becker", .Tennis),
@@ -49,9 +49,9 @@ class TokenInputViewController:DetailViewController {
         ("Henrik","Sedin", .Hockey),
         ("Jaromir","Jagr", .Hockey),
         ("Henrik","Lundqvist", .Hockey)
-        ].sort{$0.1 < $1.1}
+        ].sorted{$0.1 < $1.1}
     
-    private var filteredNames = [(String,String,Sport)]()
+    fileprivate var filteredNames = [(String,String,Sport)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,35 +59,35 @@ class TokenInputViewController:DetailViewController {
         tokenView.fieldName = "To: "
         tokenView.delegate = self
         
-        tableView.hidden = true
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.isHidden = true
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 }
 
 extension TokenInputViewController:TokenInputViewDelegate {
     
-    func tokenInputViewDidBegingEditing(view: TokenInputView) {
+    func tokenInputViewDidBegingEditing(_ view: TokenInputView) {
 
     }
     
-    func tokenInputViewDidEndEditing(view: TokenInputView) {
+    func tokenInputViewDidEndEditing(_ view: TokenInputView) {
 
     }
     
-    func tokenInputView(view: TokenInputView, didRemove token: Token) {
+    func tokenInputView(_ view: TokenInputView, didRemove token: Token) {
         
     }
     
-    func tokenInputView(view: TokenInputView, didAddToken token: Token) {
+    func tokenInputView(_ view: TokenInputView, didAddToken token: Token) {
         
     }
     
-    func tokenInputView(view: TokenInputView, didChangeText text: String?) {
+    func tokenInputView(_ view: TokenInputView, didChangeText text: String?) {
         if let text = text {
-            tableView.hidden = false
-            filteredNames = names.filter({"\($0.0) \($0.1)".rangeOfString(text, options:.CaseInsensitiveSearch) != nil})
+            tableView.isHidden = false
+            filteredNames = names.filter({"\($0.0) \($0.1)".range(of: text, options:.caseInsensitive) != nil})
         } else {
-            tableView.hidden = true
+            tableView.isHidden = true
             filteredNames.removeAll()
         }
         tableView.reloadData()
@@ -96,23 +96,23 @@ extension TokenInputViewController:TokenInputViewDelegate {
 
 extension TokenInputViewController:UITableViewDelegate, UITableViewDataSource {
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredNames.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        let name = filteredNames[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let name = filteredNames[(indexPath as NSIndexPath).row]
         let fontSize:CGFloat = 16
-        let attr = [NSFontAttributeName: UIFont.systemFontOfSize(fontSize)]
+        let attr = [NSFontAttributeName: UIFont.systemFont(ofSize: fontSize)]
         let attrString = NSMutableAttributedString(string: name.0 + " ", attributes:attr)
         
-        let boldAttr = [NSFontAttributeName:UIFont.boldSystemFontOfSize(fontSize)]
-        attrString.appendAttributedString(NSAttributedString(string: name.1, attributes: boldAttr))
+        let boldAttr = [NSFontAttributeName:UIFont.boldSystemFont(ofSize: fontSize)]
+        attrString.append(NSAttributedString(string: name.1, attributes: boldAttr))
         cell.textLabel?.attributedText = attrString
 
         
@@ -128,9 +128,9 @@ extension TokenInputViewController:UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let name = filteredNames[indexPath.row]
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let name = filteredNames[(indexPath as NSIndexPath).row]
         let token = Token(string: "\(name.0) \(name.1)")
         tokenView.addToken(token)
     }

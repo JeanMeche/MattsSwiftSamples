@@ -8,6 +8,26 @@
 //  Inspired by CLTokenInputView https://github.com/clusterinc/CLTokenInputView
 
 import UIKit
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 private let padding = UIEdgeInsets(top: 10, left: 8, bottom: 10, right: 16)
 private let rowHeight:CGFloat = 25
@@ -16,39 +36,39 @@ private let hSpace:CGFloat = 0
 private let fieldMarginX:CGFloat = 8
 
 protocol TokenInputViewDelegate {
-    func tokenInputView(view:TokenInputView, didChangeText text:String?)
-    func tokenInputView(view:TokenInputView, didAddToken token:Token)
-    func tokenInputView(view:TokenInputView, didRemove token:Token)
+    func tokenInputView(_ view:TokenInputView, didChangeText text:String?)
+    func tokenInputView(_ view:TokenInputView, didAddToken token:Token)
+    func tokenInputView(_ view:TokenInputView, didRemove token:Token)
     
-    func tokenInputViewDidEndEditing(view:TokenInputView)
-    func tokenInputViewDidBegingEditing(view:TokenInputView)
+    func tokenInputViewDidEndEditing(_ view:TokenInputView)
+    func tokenInputViewDidBegingEditing(_ view:TokenInputView)
     
     // Optional methods
-    func tokenInputViewShouldReturn(view:TokenInputView)
-    func tokenInputView(view:TokenInputView, didChangeHeightTo height:CGFloat)
+    func tokenInputViewShouldReturn(_ view:TokenInputView)
+    func tokenInputView(_ view:TokenInputView, didChangeHeightTo height:CGFloat)
 }
 
 extension TokenInputViewDelegate {
-    func tokenInputView(view:TokenInputView, didChangeHeightTo height:CGFloat) {}
-    func tokenInputViewShouldReturn(view:TokenInputView) {}
+    func tokenInputView(_ view:TokenInputView, didChangeHeightTo height:CGFloat) {}
+    func tokenInputViewShouldReturn(_ view:TokenInputView) {}
 }
 
 class TokenInputView:UIView, TokenViewDelegate {
     
-    private var tokens = [Token]()
-    private var tokenViews = [TokenView]()
+    fileprivate var tokens = [Token]()
+    fileprivate var tokenViews = [TokenView]()
     
-    private var textField:BackspaceDetectingTextField!
-    private var fieldNameLabel:UILabel!
+    fileprivate var textField:BackspaceDetectingTextField!
+    fileprivate var fieldNameLabel:UILabel!
     
-    private var intrinsicContentHeight:CGFloat = rowHeight {
+    fileprivate var intrinsicContentHeight:CGFloat = rowHeight {
         didSet {
             if intrinsicContentHeight != oldValue {
                 delegate?.tokenInputView(self, didChangeHeightTo: intrinsicContentHeight)
             }
         }
     }
-    private var bottomBorderLayer = CALayer()
+    fileprivate var bottomBorderLayer = CALayer()
     
     var fieldName:String? {
         didSet {
@@ -65,7 +85,7 @@ class TokenInputView:UIView, TokenViewDelegate {
     
     var showBottomBorder:Bool=true {
         didSet {
-            bottomBorderLayer.hidden = true
+            bottomBorderLayer.isHidden = true
             setNeedsDisplay()
         }
     }
@@ -83,32 +103,32 @@ class TokenInputView:UIView, TokenViewDelegate {
     func commonInit() {
         textField = BackspaceDetectingTextField(frame: self.bounds)
         textField.delegate = self
-        textField.autocorrectionType = .No
-        textField.autocapitalizationType = .None
+        textField.autocorrectionType = .no
+        textField.autocapitalizationType = .none
         
-        textField.addTarget(self, action: #selector(onTextFieldDidChange), forControlEvents: .EditingChanged)
+        textField.addTarget(self, action: #selector(onTextFieldDidChange), for: .editingChanged)
         
         addSubview(textField)
 
         fieldNameLabel = UILabel(frame:CGRect.zero)
         
-        bottomBorderLayer.backgroundColor = UIColor.lightGrayColor().CGColor
-        bottomBorderLayer.hidden = showBottomBorder
+        bottomBorderLayer.backgroundColor = UIColor.lightGray.cgColor
+        bottomBorderLayer.isHidden = showBottomBorder
         layer.addSublayer(bottomBorderLayer)
 
         addSubview(fieldNameLabel)
     }
     
-    override func intrinsicContentSize() -> CGSize {
+    override var intrinsicContentSize:CGSize {
         return CGSize(width:UIViewNoIntrinsicMetric, height:max(45, self.intrinsicContentHeight))
     }
     
-    private func setFieldName() {
+    fileprivate func setFieldName() {
         fieldNameLabel.text = fieldName
         fieldNameLabel.sizeToFit()
     }
     
-    func addToken(token:Token) {
+    func addToken(_ token:Token) {
         if tokens.contains(token) { return }
         tokens.append(token)
         let newTokenView = TokenView(token: token)
@@ -124,15 +144,15 @@ class TokenInputView:UIView, TokenViewDelegate {
         repositionViews()
     }
     
-    func removeToken(token:Token) {
-        guard let tokenIndex = tokens.indexOf(token) else { return }
+    func removeToken(_ token:Token) {
+        guard let tokenIndex = tokens.index(of: token) else { return }
         removeTokenAtIndex(tokenIndex)
     }
     
-    func removeTokenAtIndex(index:Int) {
+    func removeTokenAtIndex(_ index:Int) {
         tokenViews[index].removeFromSuperview()
-        tokenViews.removeAtIndex(index)
-        tokens.removeAtIndex(index)
+        tokenViews.remove(at: index)
+        tokens.remove(at: index)
         updatePlaceholderTextVisibility()
         repositionViews()
     }
@@ -189,28 +209,28 @@ class TokenInputView:UIView, TokenViewDelegate {
     
     // MARK: TokenView Delegate
     
-    func tokenViewDidRequestSelection(tokenView: TokenView) {
+    func tokenViewDidRequestSelection(_ tokenView: TokenView) {
         selectTokenView(tokenView, animated: true)
     }
     
-    func tokenViewDidRequestDelete(tokenView: TokenView, replaceWithText replacementText: String?) {
+    func tokenViewDidRequestDelete(_ tokenView: TokenView, replaceWithText replacementText: String?) {
         textField.becomeFirstResponder()
         if replacementText?.characters.count > 0 {
             textField.text = replacementText
         }
-        if let index = tokenViews.indexOf(tokenView) {
+        if let index = tokenViews.index(of: tokenView) {
             removeTokenAtIndex(index)
         }
     }
     
-    func selectTokenView(tokenView:TokenView, animated:Bool) {
+    func selectTokenView(_ tokenView:TokenView, animated:Bool) {
         tokenView.setSelected(true, animated: animated)
         for otherTokenView in tokenViews where otherTokenView != tokenView {
             otherTokenView.setSelected(false, animated: true)
         }
     }
     
-    func unselecAllTokenViewsAnimated(animated:Bool) {
+    func unselecAllTokenViewsAnimated(_ animated:Bool) {
         for tokenView in tokenViews {
             tokenView.setSelected(false, animated: animated)
         }
@@ -218,7 +238,7 @@ class TokenInputView:UIView, TokenViewDelegate {
     
     // MARK - TextField
     
-    func onTextFieldDidChange(sender:UITextField) {
+    func onTextFieldDidChange(_ sender:UITextField) {
         delegate?.tokenInputView(self, didChangeText: sender.text)
     }
     
@@ -227,15 +247,15 @@ class TokenInputView:UIView, TokenViewDelegate {
     }
     
     var isEditing:Bool {
-        return textField.editing
+        return textField.isEditing
     }
 }
 
 
 extension TokenInputView:BackspaceDetectingTextFieldDelegate {
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if let text = textField.text where text != ""{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let text = textField.text , text != ""{
             let token = Token(string: text)
             addToken(token)
             textField.text = nil
@@ -245,19 +265,19 @@ extension TokenInputView:BackspaceDetectingTextFieldDelegate {
         return true
     }
     
-    func textFieldDidBeginEditing(textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         delegate?.tokenInputViewDidBegingEditing(self)
         tokenViews.last?.hideComma = false
         unselecAllTokenViewsAnimated(true)
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
+    func textFieldDidEndEditing(_ textField: UITextField) {
         delegate?.tokenInputViewDidEndEditing(self)
         tokenViews.last?.hideComma = true
     }
     
-    func textFieldDidDeleteBackwards(textField:UITextField) {
-        if let text = textField.text where text.characters.count == 0 {
+    func textFieldDidDeleteBackwards(_ textField:UITextField) {
+        if let text = textField.text , text.characters.count == 0 {
             if let lastTokenView = tokenViews.last {
                 selectTokenView(lastTokenView, animated: true)
                 textField.resignFirstResponder()

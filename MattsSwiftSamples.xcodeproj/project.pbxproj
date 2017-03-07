@@ -18,6 +18,9 @@
 		840144C41D46135B00A27664 /* SparkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840144C21D46135B00A27664 /* SparkView.swift */; };
 		840144C71D46149E00A27664 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840144C61D46149E00A27664 /* CoreDataManager.swift */; };
 		840144C91D4616E800A27664 /* SparkButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840144C81D4616E800A27664 /* SparkButtonViewController.swift */; };
+		840BBB841D785F9E00056D84 /* CameraRollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840BBB831D785F9E00056D84 /* CameraRollViewController.swift */; };
+		841A56B11D79B292009CCAB4 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A56B01D79B292009CCAB4 /* UIView.swift */; };
+		841A56B31D79B8A8009CCAB4 /* CameraRollDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A56B21D79B8A8009CCAB4 /* CameraRollDetailViewController.swift */; };
 		844712E81D50C96A00FE8615 /* FlappyBird.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844712E71D50C96A00FE8615 /* FlappyBird.storyboard */; };
 		844712EA1D50C9C700FE8615 /* FlappyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844712E91D50C9C700FE8615 /* FlappyViewController.swift */; };
 		844712EC1D50C9E800FE8615 /* FlappyScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844712EB1D50C9E800FE8615 /* FlappyScene.swift */; };
@@ -28,6 +31,7 @@
 		844BB7A91D521FB9000E84B8 /* score.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 844BB7A81D521A3A000E84B8 /* score.m4a */; };
 		844BB7AE1D522E2C000E84B8 /* UberSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844BB7AD1D522E2C000E84B8 /* UberSplash.storyboard */; };
 		844BB7B01D522E50000E84B8 /* UberSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844BB7AF1D522E50000E84B8 /* UberSplashViewController.swift */; };
+		84AFC9901D796F56006A37B1 /* CameraRoll.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84AFC98F1D796F56006A37B1 /* CameraRoll.storyboard */; };
 		84EF60721D46484300AECEB7 /* DetailProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF60711D46484300AECEB7 /* DetailProvider.swift */; };
 		84EF609D1D4754BE00AECEB7 /* SparkButton.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EF609C1D4754BE00AECEB7 /* SparkButton.storyboard */; };
 		84EF60A21D47563800AECEB7 /* TokenInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EF60A11D47563800AECEB7 /* TokenInputViewController.swift */; };
@@ -55,6 +59,9 @@
 		840144C21D46135B00A27664 /* SparkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparkView.swift; path = Details/SparkButton/SparkView.swift; sourceTree = "<group>"; };
 		840144C61D46149E00A27664 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataManager.swift; path = Misc/CoreDataManager.swift; sourceTree = "<group>"; };
 		840144C81D4616E800A27664 /* SparkButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SparkButtonViewController.swift; path = Details/SparkButton/SparkButtonViewController.swift; sourceTree = "<group>"; };
+		840BBB831D785F9E00056D84 /* CameraRollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraRollViewController.swift; path = Details/CameraRoll/CameraRollViewController.swift; sourceTree = "<group>"; };
+		841A56B01D79B292009CCAB4 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = Extensions/UIView.swift; sourceTree = "<group>"; };
+		841A56B21D79B8A8009CCAB4 /* CameraRollDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraRollDetailViewController.swift; sourceTree = "<group>"; };
 		844712E71D50C96A00FE8615 /* FlappyBird.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = FlappyBird.storyboard; path = Details/FlappyBird/FlappyBird.storyboard; sourceTree = "<group>"; };
 		844712E91D50C9C700FE8615 /* FlappyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlappyViewController.swift; path = Details/FlappyBird/FlappyViewController.swift; sourceTree = "<group>"; };
 		844712EB1D50C9E800FE8615 /* FlappyScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FlappyScene.swift; path = Details/FlappyBird/FlappyScene.swift; sourceTree = "<group>"; };
@@ -65,6 +72,7 @@
 		844BB7A81D521A3A000E84B8 /* score.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = score.m4a; sourceTree = "<group>"; };
 		844BB7AD1D522E2C000E84B8 /* UberSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = UberSplash.storyboard; path = Details/UberSplash/UberSplash.storyboard; sourceTree = "<group>"; };
 		844BB7AF1D522E50000E84B8 /* UberSplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UberSplashViewController.swift; path = Details/UberSplash/UberSplashViewController.swift; sourceTree = "<group>"; };
+		84AFC98F1D796F56006A37B1 /* CameraRoll.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CameraRoll.storyboard; sourceTree = "<group>"; };
 		84EF60711D46484300AECEB7 /* DetailProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailProvider.swift; sourceTree = "<group>"; };
 		84EF609C1D4754BE00AECEB7 /* SparkButton.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SparkButton.storyboard; path = Details/SparkButton/SparkButton.storyboard; sourceTree = "<group>"; };
 		84EF60A11D47563800AECEB7 /* TokenInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenInputViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				840144AE1D460F1B00A27664 /* DetailViewController.swift */,
+				840BBB801D785F7600056D84 /* CameraRoll */,
 				84EF60A01D47563800AECEB7 /* TokenInput */,
 				844712E61D50C5F400FE8615 /* FlappyBird */,
 				840144BE1D46115500A27664 /* SparkButtons */,
@@ -163,6 +172,16 @@
 				840144C61D46149E00A27664 /* CoreDataManager.swift */,
 			);
 			name = Misc;
+			sourceTree = "<group>";
+		};
+		840BBB801D785F7600056D84 /* CameraRoll */ = {
+			isa = PBXGroup;
+			children = (
+				840BBB831D785F9E00056D84 /* CameraRollViewController.swift */,
+				84AFC98F1D796F56006A37B1 /* CameraRoll.storyboard */,
+				841A56B21D79B8A8009CCAB4 /* CameraRollDetailViewController.swift */,
+			);
+			name = CameraRoll;
 			sourceTree = "<group>";
 		};
 		844712E61D50C5F400FE8615 /* FlappyBird */ = {
@@ -239,6 +258,7 @@
 			children = (
 				84EF60AF1D479DDA00AECEB7 /* UIColors.swift */,
 				844712F11D50D8D100FE8615 /* Comparable.swift */,
+				841A56B01D79B292009CCAB4 /* UIView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -270,13 +290,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Matthieu Riegler";
 				TargetAttributes = {
 					840144A31D460F1B00A27664 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = UR5B93K838;
 						DevelopmentTeamName = "Matthieu Riegler";
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -307,6 +328,7 @@
 				844BB7A61D50F6FF000E84B8 /* flap.m4a in Resources */,
 				844BB7A71D50F6FF000E84B8 /* hit.m4a in Resources */,
 				84EF60A81D4765A000AECEB7 /* TokenInput.storyboard in Resources */,
+				84AFC9901D796F56006A37B1 /* CameraRoll.storyboard in Resources */,
 				840144B71D460F1B00A27664 /* LaunchScreen.storyboard in Resources */,
 				84EF60B81D4A351000AECEB7 /* Licence in Resources */,
 				844712E81D50C96A00FE8615 /* FlappyBird.storyboard in Resources */,
@@ -327,6 +349,7 @@
 			files = (
 				84EF60AB1D476A5C00AECEB7 /* PaddingLabel.swift in Sources */,
 				84EF60721D46484300AECEB7 /* DetailProvider.swift in Sources */,
+				841A56B11D79B292009CCAB4 /* UIView.swift in Sources */,
 				840144A81D460F1B00A27664 /* AppDelegate.swift in Sources */,
 				84EF60B01D479DDA00AECEB7 /* UIColors.swift in Sources */,
 				840144AB1D460F1B00A27664 /* MattsSwiftSamples.xcdatamodeld in Sources */,
@@ -334,8 +357,10 @@
 				840144C41D46135B00A27664 /* SparkView.swift in Sources */,
 				844712EC1D50C9E800FE8615 /* FlappyScene.swift in Sources */,
 				84EF60B41D47A52600AECEB7 /* Token.swift in Sources */,
+				841A56B31D79B8A8009CCAB4 /* CameraRollDetailViewController.swift in Sources */,
 				840144AD1D460F1B00A27664 /* MasterViewController.swift in Sources */,
 				84EF60A61D4756CC00AECEB7 /* TokenInputView.swift in Sources */,
+				840BBB841D785F9E00056D84 /* CameraRollViewController.swift in Sources */,
 				840144C31D46135B00A27664 /* SparkButton.swift in Sources */,
 				844712F21D50D8D100FE8615 /* Comparable.swift in Sources */,
 				844BB7B01D522E50000E84B8 /* UberSplashViewController.swift in Sources */,
@@ -384,8 +409,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -431,8 +458,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -465,6 +494,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Kyro.MattsSwiftSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -478,6 +508,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Kyro.MattsSwiftSamples;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

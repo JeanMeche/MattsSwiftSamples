@@ -17,12 +17,12 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
 
         if editable {
-            self.navigationItem.leftBarButtonItem = self.editButtonItem()
+            self.navigationItem.leftBarButtonItem = self.editButtonItem
         }
     }
 
-    override func viewWillAppear(animated: Bool) {
-        self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
+    override func viewWillAppear(_ animated: Bool) {
+        self.clearsSelectionOnViewWillAppear = self.splitViewController!.isCollapsed
         super.viewWillAppear(animated)
     }
     
@@ -32,19 +32,19 @@ class MasterViewController: UITableViewController {
 
     // MARK: - Segues
     
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                return DetailProvider.hasDetailForIndex(indexPath.row)
+                return DetailProvider.hasDetailForIndex((indexPath as NSIndexPath).row)
             }
         }
         return true
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
-            if let indexPath = self.tableView.indexPathForSelectedRow, navigationViewController = (segue.destinationViewController as? UINavigationController),
-                childVC = DetailProvider.viewControllerForIndex(indexPath.row) {
+            if let indexPath = self.tableView.indexPathForSelectedRow, let navigationViewController = (segue.destination as? UINavigationController),
+                let childVC = DetailProvider.viewControllerForIndex((indexPath as NSIndexPath).row) {
                 navigationViewController.viewControllers = [childVC]
             }
         }
@@ -52,21 +52,21 @@ class MasterViewController: UITableViewController {
 
     // MARK: - Table View
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return DetailProvider.storyboards.count > 0 ? 1 : 0
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return DetailProvider.detailCount > 0 ? 1 : 0
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DetailProvider.storyboards.count
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return DetailProvider.detailCount
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        cell.textLabel?.text = DetailProvider.titleForIndex(indexPath.row)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = DetailProvider.titleForIndex((indexPath as NSIndexPath).row)
         return cell
     }
 
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return false
     }
@@ -75,36 +75,36 @@ class MasterViewController: UITableViewController {
 
 extension MasterViewController:NSFetchedResultsControllerDelegate  {
     
-    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.tableView.beginUpdates()
     }
 
-    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
         switch type {
-            case .Insert:
-                self.tableView.insertSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
-            case .Delete:
-                self.tableView.deleteSections(NSIndexSet(index: sectionIndex), withRowAnimation: .Fade)
+            case .insert:
+                self.tableView.insertSections(IndexSet(integer: sectionIndex), with: .fade)
+            case .delete:
+                self.tableView.deleteSections(IndexSet(integer: sectionIndex), with: .fade)
             default:
                 return
         }
     }
 
-    func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
-            case .Insert:
-                tableView.insertRowsAtIndexPaths([newIndexPath!], withRowAnimation: .Fade)
-            case .Delete:
-                tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
-            case .Update:
+            case .insert:
+                tableView.insertRows(at: [newIndexPath!], with: .fade)
+            case .delete:
+                tableView.deleteRows(at: [indexPath!], with: .fade)
+            case .update:
                 break
                 //self.configureCell(tableView.cellForRowAtIndexPath(indexPath!)!, withObject: anObject as! NSManagedObject)
-            case .Move:
-                tableView.moveRowAtIndexPath(indexPath!, toIndexPath: newIndexPath!)
+            case .move:
+                tableView.moveRow(at: indexPath!, to: newIndexPath!)
         }
     }
 
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         self.tableView.endUpdates()
     }
     /*

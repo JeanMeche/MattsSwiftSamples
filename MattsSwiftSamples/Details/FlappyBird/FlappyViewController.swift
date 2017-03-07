@@ -21,15 +21,13 @@ class FlappyViewController: DetailViewController {
         skView.presentScene(flappyScene)
     }
     
-    override func shouldAutorotate() -> Bool {
-        return true
-    }
+    override var shouldAutorotate:Bool { return true }
 
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return .AllButUpsideDown
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .allButUpsideDown
         } else {
-            return .All
+            return .all
         }
     }
 }

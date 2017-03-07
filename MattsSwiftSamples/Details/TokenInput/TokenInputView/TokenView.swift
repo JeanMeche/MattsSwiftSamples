@@ -9,13 +9,13 @@
 import UIKit
 
 protocol TokenViewDelegate {
-    func tokenViewDidRequestDelete(tokenView:TokenView, replaceWithText text:String?)
-    func tokenViewDidRequestSelection(tokenView:TokenView)
+    func tokenViewDidRequestDelete(_ tokenView:TokenView, replaceWithText text:String?)
+    func tokenViewDidRequestSelection(_ tokenView:TokenView)
 }
 
 class TokenView:PaddingLabel {
     
-    private var selected:Bool = false
+    fileprivate var selected:Bool = false
 
     var delegate:TokenViewDelegate?
     var hideComma:Bool = false
@@ -33,18 +33,18 @@ class TokenView:PaddingLabel {
         super.init(frame: CGRect.zero)
         tintColor = UIColor(red: 0.0823, green: 0.4941, blue: 0.9843, alpha: 1.0)
         textInsets = UIEdgeInsets(top: 2, left: 4, bottom: 2, right: 2)
-        userInteractionEnabled = true
+        isUserInteractionEnabled = true
         
         selectedLabel.tintColor = tintColor
         selectedLabel.textInsets = UIEdgeInsets(top: 2, left: 4, bottom: 2, right: 4)
         selectedLabel.layer.masksToBounds = true
         selectedLabel.layer.cornerRadius = 6.0
         selectedLabel.backgroundColor = tintColor
-        selectedLabel.textColor = .whiteColor()
+        selectedLabel.textColor = .white
         selectedLabel.text = displayText
         addSubview(selectedLabel)
         selectedLabel.sizeToFit()
-        selectedLabel.userInteractionEnabled = true
+        selectedLabel.isUserInteractionEnabled = true
         
         setSelected(selected)
 
@@ -63,16 +63,16 @@ class TokenView:PaddingLabel {
         delegate?.tokenViewDidRequestSelection(self)
     }
     
-    func setSelected(selected:Bool, animated:Bool = false) {
+    func setSelected(_ selected:Bool, animated:Bool = false) {
         self.selected = selected
         
-        if selected && !isFirstResponder() {
+        if selected && !isFirstResponder {
             becomeFirstResponder()
-        } else if !selected && isFirstResponder() {
+        } else if !selected && isFirstResponder {
             resignFirstResponder()
         }
         
-        UIView.animateWithDuration(0.25, animations: {
+        UIView.animate(withDuration: 0.25, animations: {
             if selected {
                 self.selectedLabel.alpha = 1
             } else {
@@ -88,28 +88,28 @@ class TokenView:PaddingLabel {
         } else {
             text = displayText+","
         }
-        let attr = [
+        let attr:[String:Any] = [
             NSFontAttributeName : font,
-            NSForegroundColorAttributeName: UIColor.lightGrayColor()
+            NSForegroundColorAttributeName: UIColor.lightGray
         ]
         let attrString = NSMutableAttributedString(string: text, attributes: attr)
-        let tintRange = (text as NSString).rangeOfString(displayText)
+        let tintRange = (text as NSString).range(of: displayText)
         let attr2 = [NSForegroundColorAttributeName: tintColor]
         attrString.setAttributes(attr2, range: tintRange)
         attributedText = attrString
     }
     
     // MARK: Responder
-    override func canBecomeFirstResponder() -> Bool {
-        return true
-    }
+    override var canBecomeFirstResponder: Bool { return true }
     
+    @discardableResult
     override func resignFirstResponder() -> Bool {
         let didResignFirstResponder = super.resignFirstResponder()
         setSelected(false)
         return didResignFirstResponder
     }
     
+    @discardableResult
     override func becomeFirstResponder() -> Bool {
         let didBecomeFirstResponder = super.becomeFirstResponder()
         setSelected(true)
@@ -118,11 +118,12 @@ class TokenView:PaddingLabel {
 }
 
 extension TokenView:UIKeyInput {
-    func hasText() -> Bool {
+    
+    var hasText: Bool {
         return true
     }
     
-    func insertText(text: String) {
+    func insertText(_ text: String) {
         delegate?.tokenViewDidRequestDelete(self, replaceWithText:text)
     }
     
@@ -134,7 +135,7 @@ extension TokenView:UIKeyInput {
 
 extension TokenView:UITextInputTraits {
     var autocorrectionType:UITextAutocorrectionType {
-        get { return .No }
+        get { return .no }
         set {}
     }
 }

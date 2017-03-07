@@ -9,12 +9,12 @@
 import UIKit
 
 protocol BackspaceDetectingTextFieldDelegate:UITextFieldDelegate {
-    func textFieldDidDeleteBackwards(textField:UITextField)
+    func textFieldDidDeleteBackwards(_ textField:UITextField)
 }
 
 class BackspaceDetectingTextField:UITextField {
     
-    private weak var backspaceDelegate:BackspaceDetectingTextFieldDelegate?
+    fileprivate weak var backspaceDelegate:BackspaceDetectingTextFieldDelegate?
     
     override var delegate: UITextFieldDelegate? {
         didSet {
